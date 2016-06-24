@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Single Page App</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="calculator.js"></script>
+</head>
+<body ng-app="app">
+
+<div class="container" ng-controller="mainCtrl">
+  <h2>Web Single Page App</h2>
+  
+  <form role="form" name="mainForm" class="form-inline">
+    <div class="form-group">
+
+    <div class="col-md-9">
+      <!-- <div > -->
+        <label for="numberX">X</label>
+        <input type="text" name="numberX" class="form-control" id="numberX" ng-model="values.first" ng-change="doCalculations(sign, values.first, values.second)" ng-pattern="/^[0-9]{1,16}$/">
+        
+      <!-- </div> -->
+
+      <!-- <div> -->
+        <label>sign</label>
+        <select ng-model="sign" class="form-control" ng-change="doCalculations(sign, values.first, values.second)">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+      <!-- </div> -->
+
+      <!-- <div > -->
+        <label for="numberY">Y</label>
+        <input type="text" name="numberY" class="form-control" id="numberY" ng-model="values.second" ng-change="doCalculations(sign, values.first, values.second)" ng-pattern="/^[0-9]{1,16}$/">
+      <!-- </div> -->
+
+      <!-- <div> -->
+        </br>
+        <span  ng-show="mainForm.numberX.$error.pattern">Не допускается ввод букв в первом поле!!!</span>
+        </br>
+        <span  ng-show="mainForm.numberY.$error.pattern">Не допускается ввод букв во втором поле!!!</span>
+        </br>
+        <button class="btn" type="button" ng-click="reset()">Сбросить</button>
+        </br>
+        </br>
+      <!-- </div> -->
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="col-xs-20">
+        <input type="text" class="form-control" name="result" placeholder==&nbsp;{{result}}>
+      </div>
+    </div>
+
+    </div>
+
+  </form>
+
+</div>
+
+</body>
+</html>
+
