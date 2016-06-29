@@ -16,12 +16,14 @@ app.controller('mainCtrl', function ($scope, $window, Calculator) {
             case '-': $scope.result = Calculator.substract(a, b); break;
             case '*': $scope.result = Calculator.multiply(a, b); break;
             case '/':
-            if(a == 0 || b == 0){
+            if(b == 0){
             	$window.alert("Не разрешено делить на ноль!!!");
+                $scope.reset();
             } else {
              $scope.result = Calculator.divide(a, b);
              } 
              break;
+            case '^': $scope.result = Calculator.pow(a, b); break;
         }
     };
 
@@ -51,5 +53,9 @@ app.service('Calculator', function(){
     this.divide = function(a, b){
         return a / b;
     };
+
+    this.pow = function(a, b) {
+        return Math.pow(a, b);
+    }
 
 });
