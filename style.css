@@ -1,0 +1,10 @@
+body {
+    margin: auto;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+#ResetButton {
+    width: 235px;
+}

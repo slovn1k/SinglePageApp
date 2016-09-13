@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="calculator.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-app="app">
 
@@ -45,7 +46,7 @@
         </br>
         <span  ng-show="mainForm.numberY.$error.pattern">Не допускается ввод букв во втором поле!!!</span>
         </br>
-        <button class="btn" type="button" ng-click="reset()">Сбросить</button>
+        <button class="btn" id="ResetButton" type="button" ng-click="reset()">Сбросить</button>
         </br>
         </br>
       <!-- </div> -->
